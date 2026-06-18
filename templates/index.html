@@ -1,0 +1,41 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Internship Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body><div class="container"><h1>Internship Prediction System</h1>
+
+<form action="/predict" method="post">
+
+    <input
+        type="text"
+        name="job_title"
+        placeholder="Enter Internship Title"
+        required>
+
+    <button type="submit">
+        Predict
+    </button>
+
+</form>
+
+{% if company %}
+
+<div class="result">
+
+    <h2>Prediction Result</h2>
+
+    <p><b>Company Name:</b> {{ company }}</p>
+
+    <p><b>Location:</b> {{ location }}</p>
+
+    <p><b>Duration:</b> {{ duration }}</p>
+
+    <p><b>Stipend:</b> {{ stipend }}</p>
+
+</div>
+
+{% endif %}
+
+</div></body>
+</html>
